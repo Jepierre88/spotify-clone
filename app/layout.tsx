@@ -2,6 +2,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
 import Sidebar from './components/Sidebar'
 import Player from './components/Player'
 import Header from './components/Header'
@@ -20,7 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="flex h-screen">
           <Sidebar />
           <div className="flex flex-col flex-1">
-            <Header/>
+            <Suspense fallback={<div className="h-[64px] bg-black"></div>}>
+              <Header/>
+            </Suspense>
             <main className="flex-1 overflow-y-auto">{children}</main>
             <Player />
           </div>

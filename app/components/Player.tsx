@@ -2,6 +2,7 @@
 'use client'
 
 import { Play, Pause, SkipBack, SkipForward } from 'lucide-react'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Player() {
@@ -13,9 +14,10 @@ export default function Player() {
     <div className="h-20 bg-neutral-900 border-t border-neutral-800 flex items-center justify-between px-4">
       {/* Info de canción */}
       <div className="flex items-center gap-4 w-1/3">
-        <img
+        <Image
           src="/images/blinding-lights.jpg"
           alt="Blinding Lights"
+          width={32} height={32}
           className="w-12 h-12 rounded"
         />
         <div>
