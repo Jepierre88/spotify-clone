@@ -4,7 +4,7 @@
 import { Home, Search, MonitorSmartphone } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import debounce from 'lodash/debounce'
 
 export default function Header() {

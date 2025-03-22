@@ -13,6 +13,11 @@ type Song = {
   url: string
 }
 
+type Section = {
+  title: string
+  items: Song[]
+}
+
 export default function SearchPage() {
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -22,8 +27,8 @@ export default function SearchPage() {
   useEffect(() => {
     fetch('/api/songs')
       .then((res) => res.json())
-      .then((sections) => {
-        const allSongs = sections.flatMap((section: any) => section.items)
+      .then((sections: Section[]) => {
+        const allSongs = sections.flatMap((section) => section.items)
         setSongs(allSongs)
       })
   }, [])
